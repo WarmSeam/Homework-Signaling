@@ -76,22 +76,14 @@ public class SirenAlert : MonoBehaviour
 
             if (_isPlaying == true)
             {
-                if (_audioSource.volume < _maxVolume)
-                {
-                    float volumeOffset = _volumeIncreaseValue;
-                    ChangeVolume(volumeOffset);
-                }
+                _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, _maxVolume, _volumeIncreaseValue);
 
                 if (_audioSource.volume >= _maxVolume)
                     isVolumePeak = true;
             }
             else
             {
-                if (_audioSource.volume > _minVolume)
-                {
-                    float volumeOffset = _volumeIncreaseValue * -1;
-                    ChangeVolume(volumeOffset);
-                }
+                _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, _minVolume, _volumeIncreaseValue);
 
                 if (_audioSource.volume <= _minVolume)
                 {
@@ -105,10 +97,4 @@ public class SirenAlert : MonoBehaviour
 
         _volumeCoroutine = null;
     }
-
-    private void ChangeVolume(float volumeOffset)
-    {
-        _audioSource.volume += volumeOffset;
-    }
-
 }

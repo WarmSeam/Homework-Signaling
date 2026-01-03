@@ -492,7 +492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2534713790582280149, guid: f3f5016466f30f144baa9b5e3baa8d23, type: 3}
       propertyPath: _volumeIncreaseValue
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2835862653986406937, guid: f3f5016466f30f144baa9b5e3baa8d23, type: 3}
       propertyPath: m_LocalScale.x
