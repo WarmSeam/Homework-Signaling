@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2835862653986406937}
-  - component: {fileID: 2534713790582280149}
   - component: {fileID: 8123056985266298255}
+  - component: {fileID: 2534713790582280149}
+  - component: {fileID: 5439950756559697406}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -39,22 +40,6 @@ Transform:
   - {fileID: 7918610378684663801}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2534713790582280149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772103062369629809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d22a71093de59344780014215aeb3459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _responseZone: {fileID: 4488434358412726331}
-  _sirenAudioClip: {fileID: 8300000, guid: 3c4dadaf9f5b9404a8c3dda499dbd894, type: 3}
-  _volumeIncreaseRate: 1
-  _volumeIncreaseValue: 0.1
 --- !u!82 &8123056985266298255
 AudioSource:
   m_ObjectHideFlags: 0
@@ -151,6 +136,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2534713790582280149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772103062369629809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22a71093de59344780014215aeb3459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sirenAudioClip: {fileID: 8300000, guid: 3c4dadaf9f5b9404a8c3dda499dbd894, type: 3}
+  _volumeIncreaseRate: 1
+  _volumeIncreaseValue: 0.1
+--- !u!114 &5439950756559697406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772103062369629809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9afda1b5a3d443489429ac9b163edc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _responseZone: {fileID: 4488434358412726331}
+  _sirenAlert: {fileID: 2534713790582280149}
 --- !u!1 &1877253828925170330
 GameObject:
   m_ObjectHideFlags: 0
