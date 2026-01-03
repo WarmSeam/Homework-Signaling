@@ -1,16 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 
 public class PlayerMovement : MonoBehaviour
 {
-    private const string Horizontal = nameof(Horizontal);
-    private const string Vertical = nameof(Vertical);
-
-    [SerializeField] private float _moveSpeed = 0.3f;
-    [SerializeField] private float _rotateSpeed = 6f;
+    [SerializeField] private InputReader _input;
+    [SerializeField] private float _moveSpeed = 15f;
+    [SerializeField] private float _rotateSpeed = 200f;
 
     private Rigidbody _rigidbody;
 
@@ -18,31 +14,37 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
 
-        _rigidbody.constraints = RigidbodyConstraints.FreezeRotationY;
         _rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
 
     }
 
-    private void FixedUpdate()
+    private void OnEnable()
     {
-        Move();
-        Rotate();
+        _input.InputChanged += HandleInput;
     }
 
-    private void Move()
+    private void OnDisable()
     {
-        float vertical = Input.GetAxis(Vertical);
-
-        _rigidbody.MovePosition(_rigidbody.position + transform.forward * vertical * _moveSpeed);
+        _input.InputChanged += HandleInput;
     }
 
-    private void Rotate()
+    private void HandleInput(float rotation, float direction)
     {
-        float rotation = Input.GetAxis(Horizontal);
+        Rotate(rotation);
+        Move(direction);
+    }
 
-       Quaternion deltaRotation = Quaternion.Euler(0, rotation * _rotateSpeed, 0);
+    private void Rotate(float rotation)
+    {
+        Quaternion deltaRotation = Quaternion.Euler(0, rotation * _rotateSpeed * Time.deltaTime, 0);
 
         _rigidbody.MoveRotation(_rigidbody.rotation * deltaRotation);
     }
+
+    private void Move(float direction)
+    {
+        _rigidbody.MovePosition(_rigidbody.position + transform.forward * direction * _moveSpeed * Time.deltaTime);
+    }
+
 }
 

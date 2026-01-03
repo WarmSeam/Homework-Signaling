@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -470,6 +471,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45.689, y: -74.256, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62504174bd40ec4f83ea84e6b0b9c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1710247110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,6 +529,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1057712907307300907, guid: de2a2faf2de197d4c9f2ab9aa15c91bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408524172123250932, guid: de2a2faf2de197d4c9f2ab9aa15c91bf, type: 3}
+      propertyPath: _input
+      value: 
+      objectReference: {fileID: 963194229}
+    - target: {fileID: 3408524172123250932, guid: de2a2faf2de197d4c9f2ab9aa15c91bf, type: 3}
+      propertyPath: _moveSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408524172123250932, guid: de2a2faf2de197d4c9f2ab9aa15c91bf, type: 3}
+      propertyPath: _rotateSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309000492372538085, guid: de2a2faf2de197d4c9f2ab9aa15c91bf, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6925885564650254542, guid: de2a2faf2de197d4c9f2ab9aa15c91bf, type: 3}

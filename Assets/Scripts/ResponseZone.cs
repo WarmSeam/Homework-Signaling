@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
@@ -9,8 +7,8 @@ public class ResponseZone : MonoBehaviour
 {
     private BoxCollider _collider;
 
-    public event System.Action PlayerEntered;
-    public event System.Action PlayerExited;
+    public event Action PlayerEntered;
+    public event Action PlayerExited;
 
     private void Awake()
     {
